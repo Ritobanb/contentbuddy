@@ -2,7 +2,7 @@ import { YoutubeTranscript } from 'youtube-transcript';
 
 YoutubeTranscript.fetchTranscript('https://www.youtube.com/watch?v=9jgR-Ih_wGs')
   .then(transcript => {
-    // Join all transcript segments into a single text
+    // Join all transcript segments into a single text Test comment
     const fullText = transcript
       .map(segment => segment.text)
       .join(' ');
