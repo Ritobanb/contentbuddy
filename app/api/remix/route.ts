@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
@@ -39,8 +39,6 @@ export async function POST(req: Request) {
           content: `Please rewrite the following transcript in a clear, professional style. Maintain all original content and meaning, but improve the clarity and structure:\n\n${transcript}`
         }
       ],
-      temperature: 0.7,
-      max_tokens: 1500,
     });
 
     const remixedContent = completion.choices[0]?.message?.content || '';

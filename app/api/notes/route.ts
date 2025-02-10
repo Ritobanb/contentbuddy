@@ -49,7 +49,7 @@ export async function POST(req: Request) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
@@ -57,11 +57,9 @@ export async function POST(req: Request) {
         },
         {
           role: "user",
-          content: `Please analyze this transcript and create detailed research notes with fact-checking references:\n\n${transcript}`
+          content: `${transcript}`
         }
       ],
-      temperature: 0.7,
-      max_tokens: 2000,
     });
 
     const notes = completion.choices[0]?.message?.content || '';

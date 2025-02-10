@@ -257,7 +257,7 @@ export default function Hero() {
               <div className="flex flex-wrap justify-center gap-3 mt-6">
                 <Button 
                   className="w-[140px] bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={!validateYoutubeUrl(youtubeUrl) || isLoading}
+                  disabled={!validateYoutubeUrl(youtubeUrl) || isLoading || hasTranscript}
                   onClick={generateTranscript}
                 >
                   {isLoading ? (
@@ -269,7 +269,7 @@ export default function Hero() {
                 </Button>
                 <Button 
                   className="w-[140px] bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={!hasTranscript || isSummaryLoading}
+                  disabled={!hasTranscript || isSummaryLoading || isSummarized}
                   onClick={() => generateSummary()}
                 >
                   {isSummaryLoading ? (
@@ -283,7 +283,7 @@ export default function Hero() {
                 </Button>
                 <Button 
                   className="w-[140px] bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={!hasTranscript || isRemixLoading}
+                  disabled={!hasTranscript || isRemixLoading || isRemixed}
                   onClick={() => generateRemix()}
                 >
                   {isRemixLoading ? (
@@ -297,7 +297,7 @@ export default function Hero() {
                 </Button>
                 <Button 
                   className="w-[140px] bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={!hasTranscript || isNotesLoading}
+                  disabled={!hasTranscript || isNotesLoading || isNotesGenerated}
                   onClick={() => generateNotes()}
                 >
                   {isNotesLoading ? (

@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
@@ -38,8 +38,6 @@ export async function POST(req: Request) {
           content: `Please provide a well-structured summary of the following transcript. Use proper formatting with paragraphs, and where appropriate, use bullet points or numbered lists for key points:\n\n${transcript}`
         }
       ],
-      temperature: 0.7,
-      max_tokens: 500,
     });
 
     const summary = completion.choices[0]?.message?.content || '';
